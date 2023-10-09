@@ -1,0 +1,23 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  background: #202533;
+  z-index: 10;
+  box-sizing: border-box;
+  transition: all 250ms;
+  transform: translateX(100%);
+}
+
+.navigation_active {
+  transform: translateX(0);
+}
+
+.navigation__main {
+  overflow: auto;
+  padding: 48px 40px;
+  height: 100%;
+  box-sizing: border-box;
+}

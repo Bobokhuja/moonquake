@@ -1,0 +1,32 @@
+.menu__item {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: Ermilov, sans-serif;
+  cursor: pointer;
+  display: flex;
+  transition: all 250ms;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    background: #202533;
+  }
+
+  &:active {
+    background: #1e232f;
+  }
+
+  .menu__icon {
+    margin-bottom: 8px;
+  }
+
+  &.menu__item_active {
+    background: rgba(32, 37, 51, .7);
+  }
+}

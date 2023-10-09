@@ -1,0 +1,48 @@
+//@import "./lib/tooltip-element";
+
+@font-face {
+  font-family: Ermilov;
+  src: url("/fonts/Ermilov-bold.woff2") format("woff2"),
+  url("/fonts/Ermilov-bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/Inter-Regular.woff2") format("woff2"),
+  url("/fonts/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/Inter-Medium.woff2") format("woff2"),
+  url("/fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/Inter-Bold.woff2") format("woff2"),
+  url("/fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  font-family: "Ermilov", sans-serif;
+  background: url("//unpkg.com/three-globe/example/img/night-sky.png");
+}
+
+#root {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+}
