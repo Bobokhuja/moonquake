@@ -1,0 +1,63 @@
+.nakamura-info-tooltip {
+  position: absolute;
+  color: #fff;
+  background: rgba(89, 98, 124, 0.70);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.10);
+  z-index: 3;
+  top: calc(100% + 20px);
+  width: 210px;
+  right: -50%;
+  transition: all 120ms;
+  opacity: 0;
+  visibility: hidden;
+  text-align: left;
+  padding: 24px;
+  border-radius: 8px;
+  cursor: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-bottom: 15px solid rgba(89, 98, 124, 0.70);
+    top: -30px;
+    right: 18px;
+  }
+
+  &__label {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    color: #ddd;
+    font-size: 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin-bottom: 6px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-right: 4px;
+  }
+
+  &__value {
+    font-weight: 600;
+  }
+}

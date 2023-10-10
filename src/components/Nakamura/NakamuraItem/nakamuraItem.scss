@@ -1,0 +1,92 @@
+.nakamura__item {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.nakamura__label {
+  padding: 16px;
+  border-radius: 8px;
+  background: #2A3143;
+  color: #fff;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.nakamura__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+  &:checked ~ .nakamura__checkmark {
+    border-color: #155FB6;
+    background: url("/icons/checked.svg") no-repeat center center #155FB6;
+    background-size: 13px auto;
+  }
+}
+
+.nakamura__checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  margin-right: 12px;
+}
+
+.nakamura__tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.nakamura__button {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  margin-right: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 250ms;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background: #202533;
+  }
+
+  &:active {
+    background: #1b202c;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.nakamura__button_info:hover {
+  .nakamura__tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}

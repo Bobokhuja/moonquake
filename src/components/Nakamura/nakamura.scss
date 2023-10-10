@@ -1,0 +1,62 @@
+.nakamura__buttons {
+  margin: 32px 0 20px;
+}
+
+.nakamura__select {
+  background: none;
+  color: #fff;
+  border: none;
+  font-family: "Ermilov", sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    margin-right: 8px;
+
+    &::after {
+      content: "";
+      width: 57%;
+      height: 3px;
+      background: #fff;
+      display: none;
+    }
+  }
+
+  &_all-selected,
+  &_some-selected {
+    span {
+      border-color: #155FB6;
+      background: #155FB6;
+    }
+  }
+
+  &_some-selected {
+    span::after {
+      display: block;
+    }
+  }
+
+  &_all-selected {
+    span {
+      background: url("/assets/icons/checked.svg") no-repeat center center #155FB6;
+      background-size: 13px auto;
+    }
+  }
+}
+
+.nakamura__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

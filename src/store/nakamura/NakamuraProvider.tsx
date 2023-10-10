@@ -22,11 +22,17 @@ function NakamuraProvider({children}: PropsWithChildren) {
       unselectNakamura(nakamura: INakamura) {
         dispatch({type: NakamuraActions.UNSELECT_NAKAMURA_ITEM, payload: nakamura})
       },
+      unselectAllNakamura() {
+        dispatch({type: NakamuraActions.UNSELECT_ALL_NAKAMURA})
+      },
+      selectAllNakamura() {
+        dispatch({type: NakamuraActions.SELECT_ALL_NAKAMURA})
+      },
       toggleNakamura(nakamura: INakamura) {
         dispatch({type: NakamuraActions.TOGGLE_NAKAMURA_ITEM, payload: nakamura})
       },
       isExistsNakamura(nakamura: INakamura) {
-        return state.list.some(({date}) => date === nakamura.date)
+        return state.selected.some(({date}) => date === nakamura.date)
       },
     }}>
       {children}

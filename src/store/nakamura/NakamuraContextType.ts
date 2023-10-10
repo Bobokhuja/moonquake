@@ -17,7 +17,11 @@ export interface NakamuraContextType {
 
   unselectNakamura(nakamura: INakamura): void
 
+  unselectAllNakamura(): void
+
+  selectAllNakamura(): void
+
   toggleNakamura(nakamura: INakamura): void
 
-  isExistsNakamura(nakamura: INakamura): void
+  isExistsNakamura(nakamura: INakamura): boolean
 }

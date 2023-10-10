@@ -1,9 +1,17 @@
 import './nakamuraInfoTooltip.scss'
 import { INakamura } from '@models/INakamura.ts'
+import { HTMLAttributes } from 'react'
+import clsx from 'clsx'
 
-function NakamuraInfoTooltip({label, lat, lng, magnitude, date}: INakamura) {
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  nakamura: INakamura
+}
+
+function NakamuraInfoTooltip({nakamura, className, ...props}: Props) {
+
+  const {label, lat, lng, magnitude, date} = nakamura
   return (
-    <div className="nakamura-info-tooltip">
+    <div className={clsx('nakamura-info-tooltip', className)} {...props}>
       <h3 className="nakamura-info-tooltip__label">{label}</h3>
       <dl className="nakamura-info-tooltip__list">
         <div className="nakamura-info-tooltip__item">

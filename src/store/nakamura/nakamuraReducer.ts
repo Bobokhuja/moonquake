@@ -14,13 +14,18 @@ export const nakamuraInitialState: NakamuraContextType = {
   },
   unselectNakamura() {
   },
+  unselectAllNakamura() {
+  },
+  selectAllNakamura() {
+  },
   isExistsNakamura() {
+    return false
   },
 }
 
 type ActionType = {
   type: NakamuraActions
-  payload: INakamura | LoadNakamuraListActionType
+  payload?: INakamura | LoadNakamuraListActionType
 }
 
 export function nakamuraReducer(state: NakamuraContextType, action: ActionType): NakamuraContextType {
@@ -45,6 +50,20 @@ export function nakamuraReducer(state: NakamuraContextType, action: ActionType):
       return {
         ...state,
         selected: state.selected.filter(item => item.date !== date),
+      }
+    }
+
+    case NakamuraActions.UNSELECT_ALL_NAKAMURA: {
+      return {
+        ...state,
+        selected: [],
+      }
+    }
+
+    case NakamuraActions.SELECT_ALL_NAKAMURA: {
+      return {
+        ...state,
+        selected: state.list,
       }
     }
 
