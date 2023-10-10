@@ -2,6 +2,7 @@ import './nakamuraItem.scss'
 import { useNakamura } from '@store/nakamura/useNakamura.ts'
 import { INakamura } from '@models/INakamura.ts'
 import { NakamuraInfoTooltip } from '@components/Nakamura/NakamuraItem/NakamuraInfoTooltip'
+import { useGlobe } from '@store/globe/useGlobe.ts'
 
 interface Props {
   nakamura: INakamura
@@ -9,6 +10,9 @@ interface Props {
 
 function NakamuraItem({nakamura}: Props) {
   const {toggleNakamura, isExistsNakamura} = useNakamura()
+  const {globe} = useGlobe()
+
+  const {lat, lng, date} = nakamura
 
   return (
     <li className="nakamura__item">
@@ -22,15 +26,19 @@ function NakamuraItem({nakamura}: Props) {
           }}
         />
         <span className="nakamura__checkmark"/>
-        {nakamura.date}
+        {date}
         <div className="nakamura__tools">
           <button
             className="nakamura__button nakamura__button_show"
             onClick={() => {
-              // globeContext?.pointOfView(lat, lng, 1)
-              // if (!isActive) {
-              //   dispatch(toggleNakamuraItem(date))
-              // }
+              globe?.pointOfView({
+                lat,
+                lng,
+                altitude: 1
+              }, 1000)
+              if (!isExistsNakamura(nakamura)) {
+                toggleNakamura(nakamura)
+              }
             }}
           >
             <img
@@ -47,7 +55,10 @@ function NakamuraItem({nakamura}: Props) {
               width={24}
               height={24}
             />
-            <NakamuraInfoTooltip className="nakamura__tooltip" nakamura={nakamura}/>
+            <NakamuraInfoTooltip
+              className="nakamura__tooltip"
+              nakamura={nakamura}
+            />
           </button>
         </div>
       </label>
